@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/" # Location of your .csproj or .sln file
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker"
+    directory: "/" # Location of your Dockerfile
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "github-actions"
+    directory: "/" # Location of your workflow files (.github/workflows)
+    schedule:
+      interval: "weekly"
