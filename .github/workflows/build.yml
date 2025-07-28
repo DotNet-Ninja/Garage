@@ -1,0 +1,45 @@
+name: Build-Test-And-Publish
+permissions:
+  contents: write
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Bump-and-Tag-Semantic-Version
+    types:
+      - completed
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get latest semver tag
+        id: get_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v1
+
+      - name: Build Docker image
+        run: |
+          docker build -t dotnetninjax/garage:${{ steps.get_tag.outputs.tag }} .
+          docker tag dotnetninjax/garage:${{ steps.get_tag.outputs.tag }} dotnetninjax/garage:latest
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Push Docker images
+        run: |
+          docker push dotnetninjax/garage:${{ steps.get_tag.outputs.tag }}
+          docker push dotnetninjax/garage:latest
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.get_tag.outputs.tag }}
+          name: Release ${{ steps.get_tag.outputs.tag }}
+          draft: false
+          prerelease: false
