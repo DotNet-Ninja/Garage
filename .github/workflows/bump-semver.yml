@@ -1,0 +1,24 @@
+name: Bump-and-Tag-Semantic-Version
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+jobs:
+  bump-and-tag-version:
+    name: Bump and Tag Semantic Version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Bump and Tag Version
+        uses: jefflinse/pr-semver-bump@v1.6.0
+        with:
+          mode: bump
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          patch-label: patch
+          minor-label: minor
+          major-label: major
