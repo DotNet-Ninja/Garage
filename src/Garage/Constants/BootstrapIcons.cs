@@ -4106,4 +4106,27 @@ public enum BootstrapIcons
     ZoomIn,
     [Display(Name = "zoom-out")]
     ZoomOut,
+
+    [Display(Name = "openai")]
+    OpenAi,
+    [Display(Name = "save")]
+    GarageSave,
+    [Display(Name = "x-circle-fill")]
+    GarageCancel,
+    [Display(Name = "trash2-fill")]
+    GarageDelete,
+    [Display(Name = "arrow-counterclockwise")]
+    GarageReset,
+    [Display(Name = "pencil-square")]
+    GarageEdit,
+    [Display(Name = "door-open")]
+    GarageOpen,
+    [Display(Name = "copy")]
+    GarageCopy,
+    [Display(Name = "file-earmark-text-fill")]
+    GaragePage,
+    [Display(Name = "collection-fill")]
+    GarageGroup,
+    [Display(Name = "link")]
+    GarageLink,
 }

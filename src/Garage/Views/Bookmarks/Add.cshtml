@@ -1,0 +1,102 @@
+﻿@model BookmarkEditModel
+@{
+    ViewData[ViewKey.Title] = "Add Bookmark";
+}
+
+<div class="row mt-2">
+    <div class="col-md-8">
+        <h2>Add Bookmark to  @Model.SiteText | <span id="TitleGroup">@Model.PageText | @Model.GroupText</span></h2>
+    </div>
+    <div class="col-md-4 text-end">
+        <a asp-route="Bookmarks" asp-route-action="Index" asp-route-siteSlug="@Model.SiteSlug" asp-route-pageSlug="@Model.PageSlug" asp-route-groupId="@Model.GroupId">
+            <icon value="ArrowLeftShort" /> Back to Bookmarks
+        </a>
+    </div>
+</div>
+<form method="post">
+    <input type="hidden" asp-for="PageSlug" />
+    <input type="hidden" asp-for="PageText" />
+    <input type="hidden" asp-for="SiteSlug" />
+    <input type="hidden" asp-for="SiteText" />
+    <input type="hidden" asp-for="GroupId" />
+    <input type="hidden" asp-for="GroupText" />
+    <input type="hidden" asp-for="BookmarkId" />
+    <div class="row mt-2">
+        <div class="col-12">
+            <label asp-for="Text" class="form-label">Link Text</label>
+            <input asp-for="Text" class="form-control" placeholder="ex: My Bookmark" />
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="Href" class="form-label">Link Url</label>
+            <input asp-for="Href" class="form-control" placeholder="ex: https://www.example.com" />
+            <span asp-validation-for="Href" class="text-danger"></span>
+        </div>
+        <div class="col-md-3">
+            <label asp-for="Icon" class="form-label">Icon</label>
+            <div class="input-group">
+                <span class="input-group-text bg-dark text-light"><i id="IconPreview" class="bi bi-link-45deg"></i></span>
+                <select asp-for="Icon" class="form-control" asp-items="Model.IconList">
+                    <option value="">-- Select an Icon --</option>
+                </select>
+            </div>
+            <span asp-validation-for="GroupId" class="text-danger"></span>
+        </div>
+        <div class="col-md-2">
+            <label asp-for="IconColor" class="form-label">Icon Color</label>
+            <input asp-for="IconColor" class="form-control form-control-color" type="color" style="width: 100%"/>
+            <span asp-validation-for="IconColor" class="text-danger"></span>
+        </div>
+        <div class="col-md-2">
+            <label asp-for="SortIndex" class="form-label">Sort Index</label>
+            <input asp-for="SortIndex" class="form-control" type="number" />
+            <span asp-validation-for="SortIndex" class="text-danger"></span>
+        </div>
+        <div class="col-md-5">
+            <label asp-for="GroupId" class="form-label">Group</label>
+            <select asp-for="GroupId" class="form-control" asp-items="Model.Groups">
+                <option value="">-- Select a Group --</option>
+            </select>
+            <span asp-validation-for="GroupId" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-5 form-check form-switch">
+            <input type="checkbox" class="form-check-input" role="switch" asp-for="OpenInNewTab"/>
+            <label class="form-check-label" asp-for="OpenInNewTab">Open in New Tab</label>
+        </div>
+        <div class="col-md-7 text-end">
+            <button class="btn btn-secondary" type="reset"><icon value="GarageReset"/> Reset</button>
+            <button class="btn btn-primary" type="submit"><icon value="GarageSave"/> Save</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script type="text/javascript">
+        (function () {
+            const groupSelect = $("#GroupId");
+            const groupTitle = $("#TitleGroup");
+            const iconPreview = $("#IconPreview");
+            const icon = $("#Icon");
+
+            const groupChange = (e) => {
+                const selected = groupSelect.find("option:selected");
+                const groupName = selected.text();
+                const pageName = selected.parent().attr("label");
+                groupTitle.html(pageName + " | " + groupName);
+            };
+
+            const iconChanged = (e) => {
+                const value = $(e.target).find("option:selected").text();
+                iconPreview.attr("class", "bi bi-" + value);
+            };
+
+            icon.on('change', iconChanged);
+            groupSelect.on('change', groupChange);
+            
+            $("#Text").focus();
+        })();
+    </script>
+}

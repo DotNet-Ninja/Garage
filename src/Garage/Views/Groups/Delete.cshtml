@@ -1,0 +1,26 @@
+﻿@model GroupDeleteModel
+@{
+    ViewData[ViewKey.Title] = "Delete Group";
+}
+
+<div class="row mt-2">
+    <h1 class="text-danger">Confirm Group Deletion</h1>
+</div>
+<div class="row">
+    <p>Are you sure you want to delete the Group '@Model.GroupText' from @Model.SiteText | @Model.PageText?</p>
+</div>
+<div class="row text-end">
+    <form method="post">
+        <input type="hidden" asp-for="PageSlug" />
+        <input type="hidden" asp-for="PageText" />
+        <input type="hidden" asp-for="SiteSlug" />
+        <input type="hidden" asp-for="SiteText" />
+        <input type="hidden" asp-for="GroupId"/>
+        <input type="hidden" asp-for="GroupText" />
+        <button class="btn btn-danger"><icon value="GarageDelete"/>Confirm Delete</button>
+        <a asp-controller="Groups" asp-route-action="Index" asp-route-pageSlug="@Model.PageSlug" asp-route-siteSlug="@Model.SiteSlug" class="btn btn-secondary">
+            <icon value="GarageCancel"/>
+            Cancel
+        </a>
+    </form>
+</div>

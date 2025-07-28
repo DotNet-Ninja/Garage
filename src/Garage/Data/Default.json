@@ -1,0 +1,383 @@
+﻿{
+  "pages": [
+    {
+      "slug": "start",
+      "groups": [
+        {
+          "bookmarks": [
+            {
+              "href": "https://www.outlook.com/",
+              "icon": 794,
+              "iconColor": "#127CD6",
+              "openInNewTab": true,
+              "id": "64e1b934-83fb-45f4-8284-b37640e00673",
+              "text": "Outlook E-mail",
+              "sortIndex": 1
+            },
+            {
+              "href": "https://www.outlook.com/calendar",
+              "icon": 357,
+              "iconColor": "#127CD6",
+              "openInNewTab": true,
+              "id": "82808041-d9db-4018-8d2c-f6d40f7e485e",
+              "text": "Outlook Calendar",
+              "sortIndex": 2
+            },
+            {
+              "href": "https://copilot.microsoft.com/",
+              "icon": 439,
+              "iconColor": "#0874d9",
+              "openInNewTab": true,
+              "id": "7e0d8107-9ee9-40d2-860d-ac96bb58eedf",
+              "text": "Microsoft Copilot",
+              "sortIndex": 3
+            },
+            {
+              "href": "https://www.bing.com/",
+              "icon": 1608,
+              "iconColor": "#145df0",
+              "openInNewTab": true,
+              "id": "1b24c770-33bf-421a-80ba-3ee210ba79ca",
+              "text": "Bing Search",
+              "sortIndex": 4
+            },
+            {
+              "href": "https://onedrive.live.com/",
+              "icon": 569,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "799ad127-3baa-43fc-9fb2-a1c147c1e3cb",
+              "text": "OneDrive",
+              "sortIndex": 5
+            },
+            {
+              "href": "https://excel.cloud.microsoft/",
+              "icon": 929,
+              "iconColor": "#10793f",
+              "openInNewTab": true,
+              "id": "dee110c7-3af7-4c78-ad46-0ac8bc679df1",
+              "text": "Microsoft Excel",
+              "sortIndex": 6
+            },
+            {
+              "href": "https://to-do.live.com/tasks/",
+              "icon": 482,
+              "iconColor": "#127cd6",
+              "openInNewTab": true,
+              "id": "cd3336a5-521e-46b5-8272-5547ba2223dc",
+              "text": "Microsoft To Do",
+              "sortIndex": 8
+            },
+            {
+              "href": "https://www.office.com/launch/word",
+              "icon": 933,
+              "iconColor": "#1b5ebe",
+              "openInNewTab": true,
+              "id": "c7493905-f97b-4dd4-8445-0d9645c0112c",
+              "text": "Microsoft Word",
+              "sortIndex": 7
+            }
+          ],
+          "id": "3c020fac-b40d-4e4b-9c08-5e1414e95971",
+          "text": "Microsoft",
+          "sortIndex": 1
+        },
+        {
+          "bookmarks": [
+            {
+              "href": "https://github.com/dotnet-ninja",
+              "icon": 1095,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "ae9a8dde-b7c1-4b3f-9231-444378a4b437",
+              "text": "GitHub",
+              "sortIndex": 1
+            },
+            {
+              "href": "https://dev.azure.com/",
+              "icon": 1447,
+              "iconColor": "#8661c5",
+              "openInNewTab": true,
+              "id": "cf6a73e4-fcc5-44f2-808d-4ef7fab2d0be",
+              "text": "Azure DevOps",
+              "sortIndex": 2
+            },
+            {
+              "href": "https://portal.azure.com/",
+              "icon": 603,
+              "iconColor": "#008AD7",
+              "openInNewTab": true,
+              "id": "abadde04-0d07-4807-95ee-ce021739fcda",
+              "text": "Azure Portal",
+              "sortIndex": 3
+            },
+            {
+              "href": "https://www.nuget.org/",
+              "icon": 233,
+              "iconColor": "#004880",
+              "openInNewTab": true,
+              "id": "190f15d1-fa6a-4f59-8db3-e54108b90783",
+              "text": "NuGet",
+              "sortIndex": 4
+            },
+            {
+              "href": "https://dotnetninja.net/",
+              "icon": 1593,
+              "iconColor": "#fe5000",
+              "openInNewTab": true,
+              "id": "a2118d2c-14d5-4f42-9d4d-1860f6d10954",
+              "text": "DotNetNinja.net",
+              "sortIndex": 5
+            },
+            {
+              "href": "https://udemy.com/",
+              "icon": 747,
+              "iconColor": "#A435F0",
+              "openInNewTab": true,
+              "id": "5c362d6f-73e9-47bb-8470-fa0cbdd34fe8",
+              "text": "Udemy",
+              "sortIndex": 6
+            }
+          ],
+          "id": "5d653ed1-39f4-4477-9938-3bebe40880e7",
+          "text": "Development",
+          "sortIndex": 2
+        },
+        {
+          "bookmarks": [
+            {
+              "href": "https://www.amazon.com",
+              "icon": 19,
+              "iconColor": "#ff9900",
+              "openInNewTab": true,
+              "id": "612f016e-60ac-4169-be6a-8e88db8c21f8",
+              "text": "Amazon",
+              "sortIndex": 1
+            },
+            {
+              "href": "https://www.cabelas.com/",
+              "icon": 147,
+              "iconColor": "#FEC900",
+              "openInNewTab": true,
+              "id": "fb3786e5-36a0-4b4c-a7aa-cfac5191208b",
+              "text": "Cabela\u0027s",
+              "sortIndex": 2
+            },
+            {
+              "href": "https://www.etsy.com",
+              "icon": 147,
+              "iconColor": "#d5641c",
+              "openInNewTab": true,
+              "id": "589b90ed-0836-49b7-943a-2af92466ac00",
+              "text": "Etsy",
+              "sortIndex": 3
+            },
+            {
+              "href": "https://www.homedepot.com",
+              "icon": 147,
+              "iconColor": "#f96302",
+              "openInNewTab": true,
+              "id": "bafb1aec-c1b2-4007-90ba-f5d327dc0977",
+              "text": "Home Depot",
+              "sortIndex": 4
+            },
+            {
+              "href": "https://www.walmart.com",
+              "icon": 147,
+              "iconColor": "#007dc6",
+              "openInNewTab": true,
+              "id": "be497bc5-1930-4a31-99f9-a0ba30836d56",
+              "text": "Walmart",
+              "sortIndex": 5
+            },
+            {
+              "href": "https://www.chewy.com/",
+              "icon": 147,
+              "iconColor": "#128ced",
+              "openInNewTab": true,
+              "id": "78f25c49-1d92-4dc8-99f4-b306130c4321",
+              "text": "Chewy",
+              "sortIndex": 6
+            },
+            {
+              "href": "https://www.microcenter.com",
+              "icon": 635,
+              "iconColor": "#d8ea4d",
+              "openInNewTab": true,
+              "id": "ffd3ba84-167b-4551-9876-763b025a19e3",
+              "text": "Microcenter",
+              "sortIndex": 7
+            }
+          ],
+          "id": "d09a61fe-20f3-4f43-9bf8-08a23fb97b23",
+          "text": "Shopping",
+          "sortIndex": 3
+        },
+        {
+          "bookmarks": [
+            {
+              "href": "https://www.youtube.com/",
+              "icon": 2048,
+              "iconColor": "#ff0000",
+              "openInNewTab": true,
+              "id": "6fc48533-fcb6-464f-a9f2-8fb924742c31",
+              "text": "YouTube",
+              "sortIndex": 2
+            },
+            {
+              "href": "https://www.discoveryplus.com/",
+              "icon": 1469,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "b9d128ff-0166-4eb7-bd47-c6ff18fffe5d",
+              "text": "Discovery \u002B",
+              "sortIndex": 3
+            },
+            {
+              "href": "https://play.hbomax.com/page/urn:hbo:page:home",
+              "icon": 1469,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "d8f18ba8-579b-4a75-91a8-36e333e10688",
+              "text": "HBO Max",
+              "sortIndex": 4
+            },
+            {
+              "href": "https://www.hulu.com/hub/home",
+              "icon": 1469,
+              "iconColor": "#66aa33",
+              "openInNewTab": true,
+              "id": "d477657e-7687-4d57-9309-7ce48bf09d01",
+              "text": "Hulu",
+              "sortIndex": 5
+            },
+            {
+              "href": "https://www.disneyplus.com/home",
+              "icon": 1469,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "58f16a7f-8c13-4773-ab26-344d99b2d093",
+              "text": "Disney \u002B",
+              "sortIndex": 6
+            },
+            {
+              "href": "https://www.audible.com/library/titles",
+              "icon": 194,
+              "iconColor": "#f7991c",
+              "openInNewTab": true,
+              "id": "77997a66-ecdd-42d8-9128-79d3ace1bced",
+              "text": "Audible Library",
+              "sortIndex": 7
+            },
+            {
+              "href": "https://www.imdb.com/search/",
+              "icon": 1037,
+              "iconColor": "#f5c518",
+              "openInNewTab": true,
+              "id": "58819f41-6d01-4600-ae87-455409a471fc",
+              "text": "IMDB",
+              "sortIndex": 8
+            }
+          ],
+          "id": "8a638659-eee1-4d29-bef4-ec95cd5fe292",
+          "text": "Media",
+          "sortIndex": 4
+        },
+        {
+          "bookmarks": [
+            {
+              "href": "https://google.com/maps",
+              "icon": 1089,
+              "iconColor": "#4285f4",
+              "openInNewTab": true,
+              "id": "ed1b276e-e637-43af-b238-cbb689608dc5",
+              "text": "Google Maps",
+              "sortIndex": 1
+            },
+            {
+              "href": "https://www.wunderground.com/",
+              "icon": 612,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "d83806ca-aa30-4a7f-831a-606a4a97b2ac",
+              "text": "Wunderground",
+              "sortIndex": 2
+            },
+            {
+              "href": "https://www.accuweather.com/",
+              "icon": 612,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "1531a5eb-b4c2-485e-a585-884b9b6ee63b",
+              "text": "AccuWeather",
+              "sortIndex": 3
+            },
+            {
+              "href": "https://www.weather.com/",
+              "icon": 612,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "ea73d218-5b58-4ed1-b50a-27d806da4bbf",
+              "text": "Weather.com",
+              "sortIndex": 4
+            },
+            {
+              "href": "https://www.lightningmaps.org/",
+              "icon": 589,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "43534a4f-3c80-42c8-accb-93410cf97cbe",
+              "text": "Lightning Maps",
+              "sortIndex": 5
+            },
+            {
+              "href": "https://www.nhc.noaa.gov/",
+              "icon": 1931,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "5013597f-2fef-433d-a43e-e85ac925596b",
+              "text": "National Hurricane Center",
+              "sortIndex": 6
+            }
+          ],
+          "id": "93ee790f-38c7-4ca3-b50d-d51c9cbee88d",
+          "text": "Maps \u0026 Weather",
+          "sortIndex": 5
+        },
+        {
+          "bookmarks": [
+            {
+              "href": "https://www.nascar.com/",
+              "icon": 1048,
+              "iconColor": "#ffffff",
+              "openInNewTab": true,
+              "id": "130ca03e-57d3-4219-998c-45170ba1c98a",
+              "text": "NASCAR",
+              "sortIndex": 2
+            },
+            {
+              "href": "https://chat.openai.com/",
+              "icon": 2051,
+              "iconColor": "#9437ff",
+              "openInNewTab": true,
+              "id": "46043efc-751d-44bf-bb5a-ff2008f7c72a",
+              "text": "Open AI - Chat GPT",
+              "sortIndex": 9
+            }
+          ],
+          "id": "2298f490-2c91-41b3-b18d-057d14b222f3",
+          "text": "Other",
+          "sortIndex": 6
+        }
+      ],
+      "id": "90fda176-b737-4481-aebb-68e9cbc19b7d",
+      "text": "Start Page",
+      "sortIndex": 1
+    }
+  ],
+  "slug": "default",
+  "defaultPage": "start",
+  "id": "8fc2d125-9c9b-4da6-87f3-1e45fcdb2192",
+  "text": "Default Site",
+  "sortIndex": 0
+}

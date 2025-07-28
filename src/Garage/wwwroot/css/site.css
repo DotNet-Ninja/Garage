@@ -51,9 +51,20 @@ ul.start-link-list, i.bi {
 
 ul.start-link-list, a {
   text-decoration: none;
-  color: #bbbb00;
+  color: #00bbff;
 }
 ul.start-link-list, a:hover {
   text-decoration: none;
-  color: #00cc00;
+  color: #CC0000;
+}
+
+a.block-link{
+  display: block;
+}
+
+td.auto-ellipsis {
+  white-space: nowrap; /* Prevents line breaks */
+  overflow: hidden; /* Hides overflow text */
+  text-overflow: ellipsis; /* Adds the ellipsis */
+  max-width: 300px; /* Set a max width */
 }

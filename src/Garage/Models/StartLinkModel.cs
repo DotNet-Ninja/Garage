@@ -9,6 +9,8 @@ public class StartLinkModel
     public string Url { get; set; } = string.Empty;
     public BootstrapIcons Icon { get; set; } = BootstrapIcons.NotSet;
     public string IconColor { get; set; } = string.Empty;
+    public bool OpenInNewTab { get; set; } = true;
 
     public string IconStyle => $"color: {IconColor};";
+    public string LinkTarget => (OpenInNewTab)? "_blank" : "_self";
 }

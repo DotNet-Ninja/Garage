@@ -1,0 +1,44 @@
+﻿@model PageEditModel
+@{
+    ViewData[ViewKey.Title] = "Add Page";
+}
+
+<div class="row mt-2">
+    <div class="col-md-8">
+        <h2>Add Page</h2>
+    </div>
+    <div class="col-md-4 text-end">
+        <a asp-controller="Pages" asp-action="Index" asp-route-id="@Model.SiteSlug"><icon value="ArrowLeftShort" /> Back to Pages</a>
+    </div>
+</div>
+<form method="post">
+    <input type="hidden" asp-for="PageId" />
+    <input type="hidden" asp-for="SiteSlug" />
+    <div class="row mt-2">
+        <div class="col-12">
+            <label asp-for="Text" class="form-label">Page Name</label>
+            <input asp-for="Text" class="form-control" placeholder="ex: My Page"/>
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="Slug" class="form-label">Slug</label>
+            <input asp-for="Slug" class="form-control" placeholder="ex: my-page"/>
+            <span asp-validation-for="Slug" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="SortIndex" class="form-label">Slug</label>
+            <input asp-for="SortIndex" class="form-control" type="number"/>
+            <span asp-validation-for="SortIndex" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12 text-end">
+            <button class="btn btn-secondary" type="reset"><icon value="GarageReset"/> Reset</button>
+            <button class="btn btn-primary" type="submit"><icon value="GarageSave"/> Save</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

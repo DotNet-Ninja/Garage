@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top mb-3 main-nav">
     <div class="container">
         <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-            @Defaults.ApplicationName
+            @Model.BrandName
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -17,6 +17,7 @@
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <icon value="@item.Icon" />
                                 @item.Text
+                                <icon value="ChevronCompactRight" />
                             </a>
                             <ul class="dropdown-menu">
                                 @foreach (var child in item.Items)
@@ -29,15 +30,13 @@
                     else
                     {
                         <li class="nav-item">
-                            <a class="nav-link" href="@item.Url"><icon value="@item.Icon" /> @item.Text</a>
+                            <a class="nav-link" href="@item.Url"><icon value="@item.Icon" /> 
+                                @item.Text
+                                <icon value="ChevronCompactRight" />
+                            </a>
                         </li>
                     }
                 }              
-            </ul>
-            <ul class="navbar-nav ms-auto me-0 my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                <li class="nav-item">
-                    <a class="nav-link" href="/Account/"><icon value="Person" /> <username/></a>
-                </li>
             </ul>
         </div>
     </div>

@@ -1,0 +1,64 @@
+﻿@model List<SiteModel>
+@{
+    ViewData[ViewKey.Title] = "Sites";
+}
+
+<div class="row mt-2">
+    <h2>Sites</h2>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th>Site</th>
+                <th>Slug</th>
+                <th>Index</th>
+                <th class="text-center">Edit</th>
+                <th class="text-center">Delete</th>
+                <th class="text-center">Copy</th>
+                <th class="text-center">Pages</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var site in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-route="StartPages" asp-route-siteSlug="@site.Slug" asp-route-pageSlug="@site.DefaultPage" class="block-link">
+                            @site.Text
+                        </a>
+                    </td>
+                    <td>@site.Slug</td>
+                    <td>@site.SortIndex</td>
+                    <td class="text-center">
+                        <a asp-controller="Sites" asp-action="Edit" asp-route-id="@site.Slug" class="block-link">
+                            <icon value="GarageEdit" />
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-controller="Sites" asp-action="Delete" asp-route-id="@site.Slug">
+                            <icon value="GarageDelete" class="text-danger"/>
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-controller="Sites" asp-action="Copy" asp-route-id="@site.Slug">
+                            <icon value="GarageCopy" />
+                        </a>
+                    </td>
+                    <td class="text-center">
+                        <a asp-controller="Pages" asp-action="Index" asp-route-id="@site.Slug">
+                            <icon value="GaragePage" />
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-end">
+        <a asp-controller="Sites" asp-action="Add"><icon value="PlusCircle" /> Add Site</a>
+    </div>
+</div>

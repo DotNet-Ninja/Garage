@@ -8,12 +8,23 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="Data\Default.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Data\Default.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="AspNetCore.HealthChecks.UI" Version="9.0.0" />
 		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
-		<PackageReference Include="Auth0.AspNetCore.Authentication" Version="1.5.0" />
 		<PackageReference Include="DotNetNinja.AutoBoundConfiguration" Version="1.2.0" />
 		<PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
 		<PackageReference Include="System.IO.Abstractions" Version="22.0.15" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\data\" />
 	</ItemGroup>
 
 </Project>

@@ -1,5 +1,4 @@
-﻿using Auth0.AspNetCore.Authentication;
-using DotNetNinja.AutoBoundConfiguration;
+﻿using DotNetNinja.AutoBoundConfiguration;
 using Garage.Constants;
 using Garage.Controllers;
 using Garage.Services;
@@ -14,7 +13,6 @@ public static class DotNetNinjaMvcExtensions
         return services.AddAutoBoundConfigurations(configuration, out provider)
             .AddApplicationServices()
             .AddApplicationHealthChecks(provider)
-            .AddAuthentication(provider)
             ;
     }
 
@@ -22,7 +20,6 @@ public static class DotNetNinjaMvcExtensions
     {
         return services
             .AddHttpContextAccessor()
-            .AddTransient<ISignInService, SignInService>()
             .AddSingleton<ITimeProvider, SystemTimeProvider>();
     }
 
@@ -39,23 +36,6 @@ public static class DotNetNinjaMvcExtensions
         return services;
     }
 
-    public static IServiceCollection AddAuthentication(this IServiceCollection services, IAutoBoundConfigurationProvider provider)
-    {
-        var settings = provider.Get<AuthenticationSettings>();
-        services.Configure<CookiePolicyOptions>(options =>
-        {
-            options.MinimumSameSitePolicy = SameSiteMode.None;
-        });
-
-        services.AddAuth0WebAppAuthentication(options =>
-        {
-            options.Domain = settings.Domain;
-            options.ClientId = settings.ClientId;
-        });
-
-        return services;
-    }
-
     public static IApplicationBuilder UseDotNetNinjaMvc(this IApplicationBuilder builder, IWebHostEnvironment environment)
     {
         return builder.UseStrictTransportSecurity(environment)
@@ -63,8 +43,6 @@ public static class DotNetNinjaMvcExtensions
             .UseHttpsRedirection()
             .UseStaticFiles()
             .UseRouting()
-            .UseAuthentication()
-            .UseAuthorization()
             .UseApplicationEndpoints();
     }
 

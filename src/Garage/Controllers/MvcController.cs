@@ -1,3 +1,4 @@
+using Garage.Models;
 using Garage.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,9 +16,14 @@ public abstract class MvcController<TController>: Controller where TController: 
     protected ILogger Logger => _context.Logger;
     protected ITimeProvider Time => _context.Time;
     protected IWebHostEnvironment Host => _context.Host;
+    protected IStateService State => _context.State;
 
     protected IActionResult NotFoundView(string message)
     {
+        var model = new NotFoundModel
+        {
+            Message = message
+        };
         var result = new ViewResult
         {
             ViewName = "NotFound",
@@ -26,7 +32,7 @@ public abstract class MvcController<TController>: Controller where TController: 
                 metadataProvider: new Microsoft.AspNetCore.Mvc.ModelBinding.EmptyModelMetadataProvider(),
                 modelState: ModelState)
             {
-                Model = message
+                Model = model
             }
         };
         return result;

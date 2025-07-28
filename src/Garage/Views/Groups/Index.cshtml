@@ -1,0 +1,68 @@
+﻿@model GroupIndexModel;
+@{
+    ViewData[ViewKey.Title] = $"{Model.PageText} Groups";
+}
+
+<div class="row mt-2">
+    <div class="col-md-8">
+        <h2>Groups: @Model.SiteText | @Model.PageText</h2>
+    </div>
+    <div class="col-md-4 text-end">
+        <a asp-controller="Pages" asp-action="Index" asp-route-id="@Model.SiteSlug">
+            <icon value="ArrowLeftShort"></icon> Back to Pages
+        </a>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-12">
+        @if (Model.Groups.Any())
+        {
+            <table class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th>Group</th>
+                        <th class="text-center">Index</th>
+                        <th class="text-center">Edit</th>
+                        <th class="text-center">Delete</th>
+                        <th class="text-center">Bookmarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Groups)
+                    {
+                        <tr>
+                            <td>@item.Text</td>
+                            <td class="text-center">@item.SortIndex</td>
+                            <td class="text-center">
+                                <a asp-route="Groups" asp-route-action="Edit" asp-route-siteSlug="@Model.SiteSlug" asp-route-pageSlug="@Model.PageSlug" asp-route-id="@item.GroupId">
+                                    <icon value="GarageEdit" />
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a asp-route="Groups" asp-route-action="Delete" asp-route-siteSlug="@Model.SiteSlug" asp-route-pageSlug="@Model.PageSlug" asp-route-id="@item.GroupId">
+                                    <icon value="GarageDelete" />
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a asp-route="Bookmarks" asp-route-action="Index" asp-route-siteSlug="@Model.SiteSlug" asp-route-pageSlug="@Model.PageSlug" asp-route-groupId="@item.GroupId">
+                                    <icon value="GarageLink" />
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No groups found for current page</p>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-end">
+        <a asp-route="Groups" asp-route-action="Add" asp-route-siteSlug="@Model.SiteSlug" asp-route-pageSlug="@Model.PageSlug">
+            <icon value="PlusCircle"/> Add Group
+        </a>
+    </div>
+</div>

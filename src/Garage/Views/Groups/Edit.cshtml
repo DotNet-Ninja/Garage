@@ -1,0 +1,44 @@
+﻿@model GroupEditModel
+@{
+    ViewData[ViewKey.Title] = "Edit Group";
+}
+
+<div class="row mt-2">
+    <div class="col-md-8">
+        <h2>Edit Group: @Model.SiteText | @Model.PageText | @Model.Text</h2>
+    </div>
+    <div class="col-md-4 text-end">
+        <a asp-route="Groups" asp-route-action="Index" asp-route-siteSlug="@Model.SiteSlug" asp-route-pageSlug="@Model.PageSlug">
+            <icon value="ArrowLeftShort" /> Back to Groups
+        </a>
+    </div>
+</div>
+<form method="post">
+    <input type="hidden" asp-for="PageSlug" />
+    <input type="hidden" asp-for="PageText" />
+    <input type="hidden" asp-for="SiteSlug" />
+    <input type="hidden" asp-for="SiteText" />
+    <input type="hidden" asp-for="GroupId" />
+    <div class="row mt-2">
+        <div class="col-12">
+            <label asp-for="Text" class="form-label">Group Name</label>
+            <input asp-for="Text" class="form-control" placeholder="ex: My Group" />
+            <span asp-validation-for="Text" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <label asp-for="SortIndex" class="form-label">Sort Index</label>
+            <input asp-for="SortIndex" class="form-control" type="number" />
+            <span asp-validation-for="SortIndex" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12 text-end">
+            <button class="btn btn-secondary" type="reset"><icon value="GarageReset" /> Reset</button>
+            <button class="btn btn-primary" type="submit"><icon value="GarageSave" /> Save</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

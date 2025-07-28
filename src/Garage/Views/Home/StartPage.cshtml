@@ -7,20 +7,30 @@
     <div class="col-12 mt-3"><h2>@Model.Text</h2></div>
 </div>
 <div class="row mt-2">
-    @foreach (var group in Model.Groups)
+    @if (Model.Groups.Any())
+    {
+        foreach (var group in Model.Groups)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
+                <h3>@group.Text</h3>
+                <ul class="start-link-list">
+                    @foreach (var link in group.Links)
+                    {
+                        <li>
+                            <a href="@link.Url" target="@link.LinkTarget">
+                                <icon value="@link.Icon" style="@link.IconStyle"/> @link.Text
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    }
+    else
     {
         <div class="col-lg-4 col-md-6 col-sm-12 mt-3">
-            <h3>@group.Text</h3>
-            <ul class="start-link-list">
-                @foreach (var link in group.Links)
-                {
-                    <li>
-                        <a href="@link.Url">
-                            <icon value="@link.Icon" style="@link.IconStyle" /> @link.Text
-                        </a>
-                    </li>
-                }
-            </ul>
+            <h3>No Groups Found</h3>
+            <a asp-controller="Groups" asp-action=""></a>
         </div>
     }
 </div>

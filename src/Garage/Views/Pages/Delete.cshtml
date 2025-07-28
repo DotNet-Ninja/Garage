@@ -1,0 +1,20 @@
+﻿@model PageDeleteModel
+@{
+    ViewData[ViewKey.Title] = "Delete Page";
+}
+
+<div class="row mt-2">
+    <h1 class="text-danger">Confirm Page Deletion</h1>
+</div>
+<div class="row">
+    <p>Are you sure you want to delete the page '@Model.PageText' from '@Model.SiteText'?</p>
+</div>
+<div class="row text-end">
+    <form method="post">
+        <button class="btn btn-danger"><icon value="GarageDelete" />Confirm Delete</button>
+        <a asp-controller="Pages" asp-action="Index" asp-route-id="@Model.SiteSlug" class="btn btn-secondary">
+            <icon value="GarageCancel" />
+            Cancel
+        </a>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    image: "dotnetninjax/garage:latest"
+    ports:
+      - 6502:8080
+    restart: always
+    volumes:
+      - D:\Docker\data\Garage:/app/wwwroot/data

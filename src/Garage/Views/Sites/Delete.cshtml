@@ -1,0 +1,20 @@
+﻿@model SiteModel
+@{
+    ViewData[ViewKey.Title] = "Delete Site";
+}
+
+<div class="row mt-2">
+    <h1 class="text-danger">Confirm Site Deletion</h1>
+</div>
+<div class="row">
+    <p>Are you sure you want to delete the site '@Model.Text'?</p>
+</div>
+<div class="row text-end">
+    <form method="post">
+        <button class="btn btn-danger"><icon value="GarageDelete" />Confirm Delete</button>
+        <a asp-controller="Sites" asp-action="Index" class="btn btn-secondary">
+            <icon value="GarageCancel"/>
+            Cancel
+        </a>
+    </form>
+</div>

@@ -8,7 +8,7 @@ public class StartPageModel
     {
     }
 
-    public StartPageModel(UserPage page)
+    public StartPageModel(SitePage page)
     {
         if (page == null) throw new ArgumentNullException(nameof(page));
         Text = page.Text ?? "Garage";
@@ -26,7 +26,8 @@ public class StartPageModel
                         Url = l.Href,
                         Icon = l.Icon,
                         IconColor = l.IconColor,
-                        SortIndex = l.SortIndex
+                        SortIndex = l.SortIndex,
+                        OpenInNewTab = l.OpenInNewTab
                     })
                     .ToList() ?? new List<StartLinkModel>()
             })

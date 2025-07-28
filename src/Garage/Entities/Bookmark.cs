@@ -8,4 +8,9 @@ public class Bookmark: Entity
     public BootstrapIcons Icon { get; set; } = BootstrapIcons.Bookmark;
     public string IconColor { get; set; } = Defaults.Colors.IconColor;
     public bool OpenInNewTab { get; set; } = true;
+
+    public static List<Bookmark> Default => new List<Bookmark>()
+    {
+
+    };
 }
