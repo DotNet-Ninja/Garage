@@ -40,7 +40,6 @@ To get started, create a local directory for your data.  This directory will be 
 Copy the docker-compose.yml file into a directory on your machine and edit the last line `- D:\Docker\data\Garage:/app/wwwroot/data` replacing `D:\Docker\data\Garage` with the path to your data directory.
 
 ```
-version: "3"
 services:
   web:
     image: "dotnetninjax/garage:latest"

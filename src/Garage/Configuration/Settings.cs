@@ -10,4 +10,6 @@ public class Settings
     public int PermanentCookieTimeoutDays { get; set; } = Defaults.Settings.PermanentCookieTimeoutDays;
 
     public TimeSpan CacheTimeout => TimeSpan.FromMinutes(CacheTimeoutMinutes);
+
+    public string Version { get; set; } = "unknown";
 }

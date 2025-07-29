@@ -5,6 +5,7 @@ WORKDIR /app
 EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+ARG version
 WORKDIR /src
 COPY ["/", "/src"]
 RUN dotnet build Garage.sln -c Release
@@ -13,6 +14,8 @@ WORKDIR "/src/src/Garage"
 
 FROM build AS publish
 RUN dotnet publish "Garage.csproj" -c Release --no-build -o /app/publish /p:UseAppHost=false
+# Overwrite version.json in the build output with the value from the build arg
+RUN echo "{ \"Settings\": { \"version\": \"$version\" }}" > /app/publish/version.json
 
 FROM base AS final
 WORKDIR /app
