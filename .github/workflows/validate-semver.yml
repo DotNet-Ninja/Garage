@@ -11,7 +11,7 @@ jobs:
       pull-requests: read 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: jefflinse/pr-semver-bump@v1.6.0
         name: Validate Pull Request Metadata
         with:
