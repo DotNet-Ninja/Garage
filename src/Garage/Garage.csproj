@@ -20,7 +20,7 @@
 		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.0" />
 		<PackageReference Include="DotNetNinja.AutoBoundConfiguration" Version="1.2.0" />
 		<PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="3.0.71" />
-		<PackageReference Include="System.IO.Abstractions" Version="22.0.15" />
+		<PackageReference Include="System.IO.Abstractions" Version="22.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
